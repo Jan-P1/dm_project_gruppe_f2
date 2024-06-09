@@ -6,16 +6,6 @@ import sklearn as sk
 import sweetviz as sv
 
 
-# pip install sweetviz
-def data_analysis_sweetviz(df):
-    # analyzing the dataset
-    advert_report = sv.analyze(df)
-    # display the report
-    advert_report.show_html('Advertising.html')
-
-# importing sweetviz
-import sweetviz as sv
-
 with open('../data/gdppickle.sec', 'rb') as f:
     df_gdp = pd.read_pickle(f)
 
@@ -34,10 +24,3 @@ occupation_report = sv.analyze(df_occupation)
 gdp_report.show_html('GDP.html')
 pattern_report.show_html('Pattern.html')
 occupation_report.show_html('Occupation.html')
-
-
-data_analysis_sweetviz(df_gdp)
-print("\n\n-\n\n")
-data_analysis_sweetviz(df_pattern)
-print("\n\n-\n\n")
-data_analysis_sweetviz(df_occupation)
