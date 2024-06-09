@@ -3,6 +3,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import sklearn as sk
+import sweetviz as sv
+
+
+# pip install sweetviz
+def data_analysis_sweetviz(df):
+    # analyzing the dataset
+    advert_report = sv.analyze(df)
+    # display the report
+    advert_report.show_html('Advertising.html')
+
 
 def data_quality_report(df):
     print(f"Data Shape: {df.shape}")
@@ -34,3 +44,9 @@ print("\n\n-\n\n")
 data_quality_report(df_pattern)
 print("\n\n-\n\n")
 data_quality_report(df_occupation)
+
+data_analysis_sweetviz(df_gdp)
+print("\n\n-\n\n")
+data_analysis_sweetviz(df_pattern)
+print("\n\n-\n\n")
+data_analysis_sweetviz(df_occupation)
